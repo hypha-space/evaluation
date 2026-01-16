@@ -1,0 +1,38 @@
+cert_pem = "certs/worker1-cert.pem"
+key_pem = "certs/worker1-key.pem"
+trust_pem = "certs/worker1-trust.pem"
+gateway_addresses = [
+    "/ip4/127.0.0.1/udp/8080/quic-v1"
+]
+listen_addresses = [
+    "/ip4/127.0.0.1/udp/58041/quic-v1",
+]
+external_addresses = []
+exclude_cidr = ["192.0.2.0/24"]
+relay_circuit = true
+work_dir = "/tmp"
+telemetry_sampler = "parentbased_traceidratio"
+telemetry_sample_ratio = 0.02
+
+[resources]
+cpu = 1
+memory = 8
+storage = 20
+gpu = 0
+
+[offer]
+price = 100.0
+floor = 100.0
+
+[offer.strategy]
+type = "whole"
+
+[[executors]]
+class = "aggregate"
+name = "parameter-server"
+runtime = "parameter-server"
+
+[network]
+bandwidth_mbps = 1000
+rtt_ms = 150
+handshake_timeout = 30

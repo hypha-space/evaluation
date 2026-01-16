@@ -1,0 +1,55 @@
+cert_pem = "certs/worker10-cert.pem"
+key_pem = "certs/worker10-key.pem"
+trust_pem = "certs/worker10-trust.pem"
+gateway_addresses = [
+    "/ip4/127.0.0.1/udp/8080/quic-v1"
+]
+listen_addresses = [
+    "/ip4/0.0.0.0/udp/0/quic-v1",
+]
+external_addresses = []
+exclude_cidr = ["192.0.2.0/24"]
+relay_circuit = true
+work_dir = "/tmp"
+telemetry_sampler = "parentbased_traceidratio"
+telemetry_sample_ratio = 0.02
+
+[resources]
+cpu = 1
+memory = 8
+storage = 20
+gpu = 60
+
+[offer]
+price = 100.0
+floor = 100.0
+
+[offer.strategy]
+type = "whole"
+
+[[executors]]
+class = "train"
+name = "diloco-transformer"
+runtime = "process"
+cmd = "uv"
+args = [
+    "run",
+    "--python",
+    "3.12",
+    "--no-project",
+    "--with",
+    "https://github.com/hypha-space/hypha/releases/download/v1.0.0-alpha.73/hypha_accelerate_executor-1.0.0a73-py3-none-any.whl",
+    "--",
+    "accelerate",
+    "launch",
+    "--config_file",
+    "accelerate.yaml",
+    "-m",
+    "hypha.accelerate_executor.training",
+    "--socket",
+    "{SOCKET_PATH}",
+    "--work-dir",
+    "{WORK_DIR}",
+    "--job",
+    "{JOB_JSON}",
+]

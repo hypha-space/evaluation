@@ -1,0 +1,22 @@
+"Time","sum (
+  rate(hypha_bandwidth_inbound_bytes_total{service_namespace=""r600w4p2_f1_d40_100b300l1td40_100ts20_4tl100_tb200_worker1_worker9_worker5_worker10_worker4_worker2""}[4m0s])
++ rate(hypha_bandwidth_outbound_bytes_total{service_namespace=""r600w4p2_f1_d40_100b300l1td40_100ts20_4tl100_tb200_worker1_worker9_worker5_worker10_worker4_worker2""}[4m0s])
+)  * 8 "
+2026-01-07 13:21:00,5.94 Mb/s
+2026-01-07 13:22:00,9.09 Mb/s
+2026-01-07 13:23:00,12.5 Mb/s
+2026-01-07 13:24:00,12.6 Mb/s
+2026-01-07 13:25:00,12.7 Mb/s
+2026-01-07 13:26:00,10.2 Mb/s
+2026-01-07 13:27:00,5.89 Mb/s
+2026-01-07 13:28:00,1.78 Mb/s
+2026-01-07 13:29:00,3.47 Mb/s
+2026-01-07 13:30:00,7.23 Mb/s
+2026-01-07 13:31:00,11.1 Mb/s
+2026-01-07 13:32:00,12.1 Mb/s
+2026-01-07 13:33:00,12.2 Mb/s
+2026-01-07 13:34:00,12.0 Mb/s
+2026-01-07 13:35:00,12.0 Mb/s
+2026-01-07 13:36:00,10.0 Mb/s
+2026-01-07 13:37:00,6.08 Mb/s
+2026-01-07 13:38:00,1.97 Mb/s

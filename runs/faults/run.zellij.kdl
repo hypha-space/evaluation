@@ -1,0 +1,131 @@
+layout {
+    pane_template name="bash" {
+        command "bash"
+        start_suspended false
+    }
+
+    pane_template name="otel" {
+        command "../../scripts/otel-runner.sh"
+        start_suspended false
+    }
+
+    pane split_direction="vertical" {
+
+        otel {
+            args "service.name=gateway" "hypha-gateway" "run" "-c" "./gateway.toml"
+        }
+
+        otel {
+            args "service.name=data"  "hypha-data" "run" "-c" "./data.toml"
+        }
+
+        bash {
+            args "-c" "../../scripts/otel-runner.sh service.name=scheduler sleep 3; hypha-scheduler run -c ./scheduler.toml"
+            start_suspended false
+            focus true
+        }
+
+
+        pane split_direction="horizontal" {
+            bash name="worker1" {
+                args "-c" "../../scripts/otel-runner.sh service.name=worker1 ../../hypha/scripts/flaky-runner.sh --kill-prob-percent $WORKER1_FAULT_PROB_PERCENT hypha-worker run -c worker1.toml"
+            }
+
+            bash size="20%" {
+                args "-c" "../../scripts/network-sim.sh start --min-delay $WORKER1_MIN_DELAY --max-delay $WORKER1_MAX_DELAY --loss $WORKER1_LOSS --bandwidth $WORKER1_BANDWIDTH --spike-pct $WORKER1_SPIKE_PROB_PERCENT --spike-mult $WORKER1_SPIKE_MULT --port $WORKER1_PORT"
+            }
+        }
+
+        pane split_direction="horizontal" {
+            bash name="worker2" {
+                args "-c" "../../scripts/otel-runner.sh service.name=worker2 ../../hypha/scripts/flaky-runner.sh --kill-prob-percent $WORKER2_FAULT_PROB_PERCENT hypha-worker run -c worker2.toml"
+            }
+
+            bash size="20%" {
+                args "-c" "../../scripts/network-sim.sh start --min-delay $WORKER2_MIN_DELAY --max-delay $WORKER2_MAX_DELAY --loss $WORKER2_LOSS --bandwidth $WORKER2_BANDWIDTH --spike-pct $WORKER2_SPIKE_PROB_PERCENT --spike-mult $WORKER2_SPIKE_MULT --port $WORKER2_PORT"
+            }
+        }
+
+        pane split_direction="horizontal" {
+            bash name="worker3" {
+                args "-c" "../../scripts/otel-runner.sh service.name=worker3 ../../hypha/scripts/flaky-runner.sh --kill-prob-percent $WORKER3_FAULT_PROB_PERCENT hypha-worker run -c worker3.toml"
+            }
+
+            bash size="20%" {
+                args "-c" "../../scripts/network-sim.sh start --min-delay $WORKER3_MIN_DELAY --max-delay $WORKER3_MAX_DELAY --loss $WORKER3_LOSS --bandwidth $WORKER3_BANDWIDTH --spike-pct $WORKER3_SPIKE_PROB_PERCENT --spike-mult $WORKER3_SPIKE_MULT --port $WORKER3_PORT"
+            }
+        }
+
+
+        pane split_direction="horizontal" {
+            bash name="worker4" {
+                args "-c" "../../scripts/otel-runner.sh service.name=worker4 ../../hypha/scripts/flaky-runner.sh --kill-prob-percent $WORKER4_FAULT_PROB_PERCENT hypha-worker run -c worker4.toml"
+            }
+
+            bash size="20%" {
+                args "-c" "../../scripts/network-sim.sh start --min-delay $WORKER4_MIN_DELAY --max-delay $WORKER4_MAX_DELAY --loss $WORKER4_LOSS --bandwidth $WORKER4_BANDWIDTH --spike-pct $WORKER4_SPIKE_PROB_PERCENT --spike-mult $WORKER4_SPIKE_MULT --port $WORKER4_PORT"
+            }
+        }
+
+
+        pane split_direction="horizontal" {
+            bash name="worker5" {
+                args "-c" "../../scripts/otel-runner.sh service.name=worker5 ../../hypha/scripts/flaky-runner.sh --kill-prob-percent $WORKER5_FAULT_PROB_PERCENT hypha-worker run -c worker5.toml"
+            }
+
+            bash size="20%" {
+                args "-c" "../../scripts/network-sim.sh start --min-delay $WORKER5_MIN_DELAY --max-delay $WORKER5_MAX_DELAY --loss $WORKER5_LOSS --bandwidth $WORKER5_BANDWIDTH --spike-pct $WORKER5_SPIKE_PROB_PERCENT --spike-mult $WORKER5_SPIKE_MULT --port $WORKER5_PORT"
+            }
+        }
+
+        pane split_direction="horizontal" {
+            bash name="worker6" {
+                args "-c" "../../scripts/otel-runner.sh service.name=worker6 ../../hypha/scripts/flaky-runner.sh --kill-prob-percent $WORKER6_FAULT_PROB_PERCENT hypha-worker run -c worker6.toml"
+            }
+
+            bash size="20%" {
+                args "-c" "../../scripts/network-sim.sh start --min-delay $WORKER6_MIN_DELAY --max-delay $WORKER6_MAX_DELAY --loss $WORKER6_LOSS --bandwidth $WORKER6_BANDWIDTH --spike-pct $WORKER6_SPIKE_PROB_PERCENT --spike-mult $WORKER6_SPIKE_MULT --port $WORKER6_PORT"
+            }
+        }
+
+        pane split_direction="horizontal" {
+            bash name="worker7" {
+                args "-c" "../../scripts/otel-runner.sh service.name=worker7 ../../hypha/scripts/flaky-runner.sh --kill-prob-percent $WORKER7_FAULT_PROB_PERCENT hypha-worker run -c worker7.toml"
+            }
+
+            bash size="20%" {
+                args "-c" "../../scripts/network-sim.sh start --min-delay $WORKER7_MIN_DELAY --max-delay $WORKER7_MAX_DELAY --loss $WORKER7_LOSS --bandwidth $WORKER7_BANDWIDTH --spike-pct $WORKER7_SPIKE_PROB_PERCENT --spike-mult $WORKER7_SPIKE_MULT --port $WORKER7_PORT"
+            }
+        }
+
+        pane split_direction="horizontal" {
+            bash name="worker8" {
+                args "-c" "../../scripts/otel-runner.sh service.name=worker8 ../../hypha/scripts/flaky-runner.sh --kill-prob-percent $WORKER8_FAULT_PROB_PERCENT hypha-worker run -c worker8.toml"
+            }
+
+            bash size="20%" {
+                args "-c" "../../scripts/network-sim.sh start --min-delay $WORKER8_MIN_DELAY --max-delay $WORKER8_MAX_DELAY --loss $WORKER8_LOSS --bandwidth $WORKER8_BANDWIDTH --spike-pct $WORKER8_SPIKE_PROB_PERCENT --spike-mult $WORKER8_SPIKE_MULT --port $WORKER8_PORT"
+            }
+        }
+
+        pane split_direction="horizontal" {
+            bash name="worker9" {
+                args "-c" "../../scripts/otel-runner.sh service.name=worker9 ../../hypha/scripts/flaky-runner.sh --kill-prob-percent $WORKER9_FAULT_PROB_PERCENT hypha-worker run -c worker9.toml"
+            }
+
+            bash size="20%" {
+                args "-c" "../../scripts/network-sim.sh start --min-delay $WORKER9_MIN_DELAY --max-delay $WORKER9_MAX_DELAY --loss $WORKER9_LOSS --bandwidth $WORKER9_BANDWIDTH --spike-pct $WORKER9_SPIKE_PROB_PERCENT --spike-mult $WORKER9_SPIKE_MULT --port $WORKER9_PORT"
+            }
+        }
+
+        pane split_direction="horizontal" {
+            bash name="worker10" {
+                args "-c" "../../scripts/otel-runner.sh service.name=worker10 ../../hypha/scripts/flaky-runner.sh --kill-prob-percent $WORKER10_FAULT_PROB_PERCENT hypha-worker run -c worker10.toml"
+            }
+
+            bash size="20%" {
+                args "-c" "../../scripts/network-sim.sh start --min-delay $WORKER10_MIN_DELAY --max-delay $WORKER10_MAX_DELAY --loss $WORKER10_LOSS --bandwidth $WORKER10_BANDWIDTH --spike-pct $WORKER10_SPIKE_PROB_PERCENT --spike-mult $WORKER10_SPIKE_MULT --port $WORKER10_PORT"
+            }
+        }
+   }
+}

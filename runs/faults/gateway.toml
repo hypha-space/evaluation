@@ -1,0 +1,12 @@
+cert_pem = "certs/gateway1-cert.pem"
+key_pem = "certs/gateway1-key.pem"
+trust_pem = "certs/gateway1-trust.pem"
+listen_addresses = [
+    "/ip4/127.0.0.1/udp/8080/quic-v1",
+]
+external_addresses = [
+    "/ip4/127.0.0.1/udp/8080/quic-v1",
+]
+exclude_cidr = ["192.0.2.0/24"]
+telemetry_sampler = "parentbased_traceidratio"
+telemetry_sample_ratio = 0.2

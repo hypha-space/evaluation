@@ -1,0 +1,22 @@
+"Time","sum by (service_name) (
+  rate(hypha_bandwidth_inbound_bytes_total{service_namespace=""r600w4p2_f1_d40_100b300l1td40_100ts20_4tl100_tb200_worker1_worker9_worker5_worker10_worker4_worker2""}[4m0s])
++ rate(hypha_bandwidth_outbound_bytes_total{service_namespace=""r600w4p2_f1_d40_100b300l1td40_100ts20_4tl100_tb200_worker1_worker9_worker5_worker10_worker4_worker2""}[4m0s])
+)  * 8 ","gateway","worker1","worker10","worker2","worker3","worker4","worker5","worker6","worker7","worker8","worker9"
+2026-01-07 13:21:00,32.2 kb/s,1.15 kb/s,2.90 Mb/s,1.06 kb/s,3.08 kb/s,18.3 kb/s,1.21 kb/s,1.15 kb/s,737 kb/s,737 kb/s,752 kb/s,752 kb/s
+2026-01-07 13:22:00,49.6 kb/s,1.22 kb/s,4.43 Mb/s,1.18 kb/s,4.24 kb/s,17.0 kb/s,1.44 kb/s,1.20 kb/s,1.13 Mb/s,1.15 Mb/s,1.15 Mb/s,1.15 Mb/s
+2026-01-07 13:23:00,68.7 kb/s,1.53 kb/s,6.10 Mb/s,1.42 kb/s,5.63 kb/s,12.4 kb/s,1.76 kb/s,1.40 kb/s,1.55 Mb/s,1.58 Mb/s,1.57 Mb/s,1.57 Mb/s
+2026-01-07 13:24:00,68.9 kb/s,1.09 kb/s,6.18 Mb/s,1.20 kb/s,5.36 kb/s,1.25 kb/s,1.33 kb/s,1.02 kb/s,1.57 Mb/s,1.61 Mb/s,1.57 Mb/s,1.58 Mb/s
+2026-01-07 13:25:00,78.5 kb/s,16.2 kb/s,6.19 Mb/s,12.4 kb/s,15.5 kb/s,7.24 kb/s,13.6 kb/s,15.9 kb/s,1.57 Mb/s,1.59 Mb/s,1.57 Mb/s,1.59 Mb/s
+2026-01-07 13:26:00,79.3 kb/s,16.8 kb/s,4.88 Mb/s,13.1 kb/s,16.3 kb/s,16.3 kb/s,14.2 kb/s,16.6 kb/s,1.31 Mb/s,1.26 Mb/s,1.29 Mb/s,1.26 Mb/s
+2026-01-07 13:27:00,80.4 kb/s,17.4 kb/s,2.78 Mb/s,13.4 kb/s,16.6 kb/s,17.0 kb/s,14.7 kb/s,17.0 kb/s,713 kb/s,723 kb/s,765 kb/s,731 kb/s
+2026-01-07 13:28:00,56.4 kb/s,2.35 kb/s,786 kb/s,2.58 kb/s,6.82 kb/s,11.1 kb/s,2.56 kb/s,2.46 kb/s,232 kb/s,217 kb/s,254 kb/s,211 kb/s
+2026-01-07 13:29:00,52.7 kb/s,1.69 kb/s,1.61 Mb/s,1.95 kb/s,6.13 kb/s,1.91 kb/s,1.94 kb/s,1.80 kb/s,454 kb/s,441 kb/s,431 kb/s,463 kb/s
+2026-01-07 13:30:00,60.4 kb/s,15.8 kb/s,3.44 Mb/s,11.7 kb/s,15.7 kb/s,7.10 kb/s,13.4 kb/s,15.8 kb/s,872 kb/s,925 kb/s,915 kb/s,943 kb/s
+2026-01-07 13:31:00,75.4 kb/s,17.5 kb/s,5.31 Mb/s,13.2 kb/s,16.8 kb/s,16.9 kb/s,14.7 kb/s,17.0 kb/s,1.32 Mb/s,1.42 Mb/s,1.42 Mb/s,1.43 Mb/s
+2026-01-07 13:32:00,78.4 kb/s,17.8 kb/s,5.89 Mb/s,27.3 kb/s,17.2 kb/s,17.3 kb/s,15.2 kb/s,17.3 kb/s,1.52 Mb/s,1.51 Mb/s,1.52 Mb/s,1.49 Mb/s
+2026-01-07 13:33:00,68.8 kb/s,2.89 kb/s,5.96 Mb/s,14.4 kb/s,7.12 kb/s,11.4 kb/s,3.11 kb/s,2.78 kb/s,1.53 Mb/s,1.51 Mb/s,1.52 Mb/s,1.53 Mb/s
+2026-01-07 13:34:00,67.3 kb/s,1.29 kb/s,5.92 Mb/s,834 b/s,5.82 kb/s,1.41 kb/s,1.69 kb/s,1.47 kb/s,1.48 Mb/s,1.51 Mb/s,1.49 Mb/s,1.51 Mb/s
+2026-01-07 13:35:00,75.2 kb/s,16.2 kb/s,5.89 Mb/s,6.70 kb/s,13.2 kb/s,6.99 kb/s,13.6 kb/s,15.8 kb/s,1.49 Mb/s,1.52 Mb/s,1.50 Mb/s,1.51 Mb/s
+2026-01-07 13:36:00,61.9 kb/s,17.3 kb/s,4.88 Mb/s,7.74 kb/s,12.5 kb/s,16.9 kb/s,15.8 kb/s,17.0 kb/s,1.24 Mb/s,1.27 Mb/s,1.24 Mb/s,1.24 Mb/s
+2026-01-07 13:37:00,48.8 kb/s,17.6 kb/s,2.93 Mb/s,12.7 kb/s,11.0 kb/s,17.4 kb/s,16.1 kb/s,17.3 kb/s,757 kb/s,752 kb/s,752 kb/s,748 kb/s
+2026-01-07 13:38:00,,2.34 kb/s,960 kb/s,6.88 kb/s,1.90 kb/s,11.4 kb/s,3.53 kb/s,2.56 kb/s,253 kb/s,244 kb/s,244 kb/s,244 kb/s
