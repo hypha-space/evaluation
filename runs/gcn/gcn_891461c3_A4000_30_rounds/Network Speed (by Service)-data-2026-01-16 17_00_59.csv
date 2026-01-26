@@ -1,0 +1,10 @@
+"Time","sum (
+  rate(hypha_bandwidth_inbound_bytes_total{service_namespace=""gcn_891461c3""}[4m0s])
++ rate(hypha_bandwidth_outbound_bytes_total{service_namespace=""gcn_891461c3""}[4m0s])
+)  * 8 "
+2026-01-16 12:05:00,5.36 Mb/s
+2026-01-16 12:06:00,7.22 Mb/s
+2026-01-16 12:07:00,7.77 Mb/s
+2026-01-16 12:08:00,7.79 Mb/s
+2026-01-16 12:09:00,6.72 Mb/s
+2026-01-16 12:10:00,6.79 Mb/s
